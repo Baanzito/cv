@@ -14,16 +14,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-      html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+      html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+
+      .dark-mode {
+        background-color: #121212 !important;
+        color: #f1f1f1 !important;
+      }
+      .dark-mode .w3-text-grey {
+        color: #ddd !important;
+      }
+      .dark-mode .w3-text-indigo {
+        color: #5567d1 !important;
+      }
+      .dark-mode .w3-white {
+        background-color: #1E1E1E !important;
+        color: #f1f1f1 !important;
+      }
+      .dark-mode .w3-hover-opacity:hover {
+        color: #bbb !important;
+      }
+      .dark-mode .w3-indigo, .dark-mode .w3-hover-indigo:hover {
+        background-color: #333 !important;
+        color: #f1f1f1 !important;
+      }
+      .dark-mode .w3-tag {
+        background-color: #1E1E1E !important;
+      }
+      .dark-mode a {
+        color: #5567d1 !important;
+      }
+      .theme-toggle-button {
+        background-color: #3f51b5;
+        color: white;
+        margin: 16px;
+      }
+
     </style>
     
   </head>
 
   <body class="w3-light-grey" cz-shortcut-listen="true">
-  
     <!-- Page Container -->
     <div class="w3-content w3-margin-top" style="max-width:1400px;">
-  
+      <button id="themeToggleBtn" onclick="toggleTheme()" class="w3-button theme-toggle-button w3-right">Tema Escuro</button>
       <!-- The Grid -->
       <div class="w3-row-padding">
   
@@ -227,7 +260,20 @@
       <a href="https://www.linkedin.com/in/diego-rodrigues-67133b183" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
       <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
     </footer>
-  
+    
+    <script>
+      function toggleTheme() {
+        document.body.classList.toggle('dark-mode');
+
+        var themeToggleBtn = document.getElementById('themeToggleBtn');
+        if (document.body.classList.contains("dark-mode")) {
+          themeToggleBtn.innerText = "Tema Claro";
+        } else {
+          themeToggleBtn.innerText = "Tema Escuro";
+        }
+      }
+    </script>
+
   </body>
 
 </html>
